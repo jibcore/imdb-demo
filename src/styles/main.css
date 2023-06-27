@@ -1,0 +1,32 @@
+@import './base.css';
+@import './helpers.css';
+
+#app,
+html,
+body {
+  height: 100%;
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--theme-font-family);
+  background-color: rgb(var(--theme-background));
+  color: rgb(var(--theme-on-surface));
+  margin: 0;
+}
+
+button,
+input {
+  background-color: transparent;
+  border-style: none;
+}
+
+input {
+  color: rgb(var(--theme-on-surface));
+  outline: none;
+  border-color: -internal-light-dark(rgb(118, 118, 118), rgb(133, 133, 133));
+  border-top-color: ;
+  border-right-color: ;
+  border-bottom-color: ;
+  border-left-color: ;
+}
