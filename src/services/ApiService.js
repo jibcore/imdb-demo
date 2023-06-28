@@ -57,7 +57,7 @@ class ApiService {
     const data = ApiService.replaceByUpdatedMovies([
       ...top250MoviesMock.items,
       ...mostPopularMoviesMock.items
-    ]).filter((movie) => movie.title.toLowerCase().includes(search.toLowerCase()))
+    ]).filter((movie) => movie.fullTitle.toLowerCase().includes(search.toLowerCase()))
     return ApiService.getWithDelay({ abortController, data, delay })
   }
 

@@ -17,7 +17,7 @@ onMounted(() => {
       <SearchInput
         :model-value="store.search"
         :debounce-delay="500"
-        @update:model-value="($event) => store.searchMovies($event.target.value)"
+        @update:model-value="($event) => store.searchMovies($event)"
       />
     </div>
     <MoviesList :hide-no-data="!store.search && store.movies.length < 1" />
