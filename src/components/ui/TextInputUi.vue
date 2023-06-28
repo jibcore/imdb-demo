@@ -26,9 +26,9 @@ const onInput = debounce((event) => {
 <template>
   <div class="text-input-ui">
     <slot name="append-icon" />
-    <label class="w-100 h-100">
+    <label class="w-100">
       <div class="input-label">{{ label }}</div>
-      <input class="w-100 h-100" type="text" :value="modelValue" @input="onInput" />
+      <input class="w-100" type="text" :value="modelValue" @input="onInput" />
     </label>
   </div>
 </template>
