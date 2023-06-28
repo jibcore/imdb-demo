@@ -15,6 +15,11 @@ const router = createRouter({
       component: MoviesListView
     },
     {
+      path: '/edited-movies',
+      name: 'Edited Movies',
+      component: MoviesListView
+    },
+    {
       path: '/search-movies',
       name: 'Search Movies',
       component: () => import('../views/SearchMoviesView.vue')
@@ -24,8 +29,7 @@ const router = createRouter({
       name: 'Movie Details',
       component: () => import('../views/MovieDetailView.vue'),
       meta: {
-        hideNav: true,
-        hideTitle: true
+        hideNav: true
       }
     }
   ]

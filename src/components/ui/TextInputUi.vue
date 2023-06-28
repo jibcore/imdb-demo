@@ -6,6 +6,10 @@ const props = defineProps({
     type: String,
     default: ''
   },
+  label: {
+    type: String,
+    default: ''
+  },
   debounceDelay: {
     type: Number,
     default: 500
@@ -15,14 +19,17 @@ const props = defineProps({
 const emit = defineEmits(['update:modelValue'])
 
 const onInput = debounce((event) => {
-  emit('update:modelValue', event)
+  emit('update:modelValue', event.target.value)
 }, props.debounceDelay)
 </script>
 
 <template>
   <div class="text-input-ui">
     <slot name="append-icon" />
-    <input class="w-100 h-100" type="text" :value="modelValue" @input="onInput" />
+    <label class="w-100 h-100">
+      <div class="input-label">{{ label }}</div>
+      <input class="w-100 h-100" type="text" :value="modelValue" @input="onInput" />
+    </label>
   </div>
 </template>
 
@@ -43,5 +50,11 @@ const onInput = debounce((event) => {
   box-shadow: 0 3px 1px -2px var(--shadow-key-umbra-opacity, rgba(0, 0, 0, 0.2)),
     0 2px 2px 0 var(--shadow-key-penumbra-opacity, rgba(0, 0, 0, 0.14)),
     0 1px 5px 0 var(--shadow-key-penumbra-opacity, rgba(0, 0, 0, 0.12));
+}
+
+.input-label {
+  --v-field-label-scale: 0.75em;
+  font-size: var(--v-field-label-scale);
+  max-width: 100%;
 }
 </style>

@@ -10,7 +10,7 @@ const route = useRoute()
   <HeaderComponent />
   <main class="app-main">
     <div class="content">
-      <h1 v-if="route.meta && !route.meta.hideTitle">{{ route.name }}</h1>
+      <h1 v-if="!route.meta || !route.meta.hideTitle">{{ route.name }}</h1>
       <slot />
     </div>
   </main>

@@ -8,10 +8,16 @@ const store = useMoviesListStore()
 const route = useRoute()
 
 function fetchData() {
-  if (route.path === '/') {
-    store.fetchTop250Movies()
-  } else if (route.path === '/most-popular') {
-    store.fetchMostPopularMovies()
+  switch (route.path) {
+    case '/':
+      store.fetchTop250Movies()
+      break
+    case '/most-popular':
+      store.fetchMostPopularMovies()
+      break
+    case '/edited-movies':
+      store.fetchEditedMovies()
+      break
   }
 }
 

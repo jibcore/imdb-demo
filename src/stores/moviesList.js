@@ -45,6 +45,9 @@ export const useMoviesListStore = defineStore('moviesList', {
     async fetchMostPopularMovies() {
       this.updateMovies(ApiService.getMostPopularMovies)
     },
+    async fetchEditedMovies() {
+      this.updateMovies(ApiService.getEditedMovies)
+    },
     async searchMovies(search) {
       this.search = search
       if (search) {
