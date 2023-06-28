@@ -68,6 +68,7 @@ class ApiService {
     } else {
       editedMovies.push(movie)
     }
+    editedMovies = [...editedMovies]
     return ApiService.getWithDelay({ abortController, movie, delay })
   }
 }
